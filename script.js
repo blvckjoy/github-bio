@@ -14,9 +14,10 @@ async function fetchGithubProfile() {
       updateProfile(data);
       userInfo.classList.toggle('hidden');
       userInfo.classList.add('fade-in');
+      // animation ends after 0.5s
       setTimeout(() => userInfo.classList.remove('fade-in'), 500);
    } catch (error) {
-      alert('Error:', error);
+      alert('Error: Input cannot be empty');
    }
 }
 
@@ -28,7 +29,7 @@ function getInputValue() {
 // function to validate input
 function validateInput(input) {
    if (!input) {
-      throw new Error('Uh Oh');
+      throw new Error();
    }
 }
 
