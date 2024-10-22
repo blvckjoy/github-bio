@@ -17,7 +17,7 @@ async function fetchGithubProfile() {
       // animation ends after 0.5s
       setTimeout(() => userInfo.classList.remove('fade-in'), 500);
    } catch (error) {
-      alert('Error: Input cannot be empty');
+      alert(`Error: ${error.message}`);
    }
 }
 
@@ -29,13 +29,18 @@ function getInputValue() {
 // function to validate input
 function validateInput(input) {
    if (!input) {
-      throw new Error();
+      throw new Error('Input cannot be empty');
    }
+   // validate Github username
+   const usernamePattern = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+   if (!usernamePattern.test(input))
+      throw new Error('Invalid Github username format');
 }
 
 // function to fetch data
 async function fetchData(url) {
    const res = await fetch(url);
+   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
    return await res.json();
 }
 
