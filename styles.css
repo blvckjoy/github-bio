@@ -131,3 +131,59 @@ button:focus {
       opacity: 1;
    }
 }
+
+/* media queries */
+@media (max-width: 768px) {
+   body {
+      max-width: 768px;
+      padding: 0 2rem;
+   }
+
+   .user-info {
+      flex-direction: column;
+      /* text-align: center; */
+      padding: 20px;
+   }
+
+   .content-box {
+      gap: 1rem;
+      text-align: center;
+   }
+
+   .heading {
+      font-size: 1.5rem;
+   }
+
+   .description {
+      font-size: 1rem;
+   }
+
+   #followers,
+   #following {
+      font-size: 0.7rem;
+   }
+
+   button {
+      width: 100%;
+      padding: 12px;
+   }
+
+   .follow-count {
+      justify-content: center;
+   }
+}
+
+@media (max-width: 480px) {
+   .user-info img {
+      height: 5rem;
+      width: 5rem;
+   }
+
+   .heading {
+      font-size: 1.2rem;
+   }
+
+   .description {
+      font-size: 0.9rem;
+   }
+}
