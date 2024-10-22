@@ -14,6 +14,7 @@ async function fetchGithubProfile() {
       updateProfile(data);
       userInfo.classList.toggle('hidden');
       userInfo.classList.add('fade-in');
+
       // animation ends after 0.5s
       setTimeout(() => userInfo.classList.remove('fade-in'), 500);
    } catch (error) {
@@ -31,6 +32,7 @@ function validateInput(input) {
    if (!input) {
       throw new Error('Input cannot be empty');
    }
+
    // validate Github username
    const usernamePattern = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
    if (!usernamePattern.test(input))
@@ -50,6 +52,7 @@ function updateProfile(data) {
    document.querySelector('.heading').textContent = `${data.name}`;
    document.querySelector('.description').textContent =
       data.bio === null ? '' : `${data.bio}`;
+
    // format followers count
    followers.textContent =
       data.followers >= 1000
@@ -63,6 +66,7 @@ function updateProfile(data) {
          : `${data.following} `;
 }
 
+// event listener
 searchBtn.addEventListener('click', (e) => {
    e.preventDefault();
    fetchGithubProfile();
