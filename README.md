@@ -7,6 +7,7 @@ A simple web application that allows users to view GitHub profiles by entering a
 -  Fetch and display GitHub user profiles.
 -  Show user avatar, name, and bio.
 -  Format followers and following counts for better readability.
+-  Responsive design for a better user experience.
 
 ## Technologies Used
 
