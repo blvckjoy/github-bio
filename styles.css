@@ -123,11 +123,11 @@ button:focus {
 
 @keyframes fadeIn {
    from {
-      /* transform: translateY(10px); */
+      transform: translateY(10px);
       opacity: 0;
    }
    to {
-      /* transform: translateY(0); */
+      transform: translateY(0);
       opacity: 1;
    }
 }
@@ -141,7 +141,6 @@ button:focus {
 
    .user-info {
       flex-direction: column;
-      /* text-align: center; */
       padding: 20px;
    }
 
