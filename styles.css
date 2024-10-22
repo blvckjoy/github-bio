@@ -98,7 +98,7 @@ span {
 
 button {
    font-size: 1rem;
-   padding: 1rem 2rem;
+   padding: 1.2rem;
    cursor: pointer;
    background-color: rgb(71, 50, 125);
    color: white;
@@ -165,7 +165,7 @@ button:focus {
 
    button {
       width: 100%;
-      padding: 12px;
+      padding: 1rem 2rem;
    }
 
    .follow-count {
