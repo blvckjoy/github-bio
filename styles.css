@@ -9,11 +9,15 @@ body {
    font-family: Arial, Helvetica, sans-serif;
    font-size: 62.5%;
    font-weight: 500;
+   color: #f4f4f4;
 
    display: flex;
    justify-content: center;
    align-items: center;
-   margin: 40vh 0 auto 0;
+   margin: 30vh 0 auto 0;
+   padding: 0 4.8rem;
+
+   overflow: hidden;
 }
 
 .content-box {
@@ -29,11 +33,11 @@ body {
    align-items: center;
    justify-content: center;
    gap: 2rem;
-   max-width: 500px;
-   background-color: rgb(166, 236, 224);
-   box-shadow: 0 5px 10px rgba(166, 236, 224, 0.2);
-   padding: 30px;
-   border-radius: 10px;
+   max-width: 30rem;
+   background-color: rgb(48, 84, 78);
+   box-shadow: 0 5px 10px rgba(110, 159, 151, 0.2);
+   padding: 3rem;
+   border-radius: 5px;
 }
 
 .hidden {
@@ -41,23 +45,23 @@ body {
 }
 
 .user-info img {
-   height: 70px;
-   width: 70px;
+   height: 6rem;
+   width: 6rem;
 
    border-radius: 50%;
 }
 
 .heading {
-   font-family: 'Acme', arial;
+   font-family: 'Raleway', sans-serif;
    font-size: 1.4rem;
-   letter-spacing: 1px;
-   margin-bottom: 6px;
+   letter-spacing: 0.1;
+   margin-bottom: 0.6rem;
 }
 
 .description {
    line-height: 1.4;
    font-size: 0.8rem;
-   margin-bottom: 6px;
+   margin-bottom: 0.6rem;
 }
 
 .user-action {
@@ -67,9 +71,9 @@ body {
 }
 
 .user-action input {
-   padding: 8px;
+   padding: 0.8rem;
    border: 1px solid rgba(0, 0, 0, 0.2);
-   border-radius: 5px;
+   border-radius: 0.5rem;
    transition: border-color 0.3s;
 }
 
@@ -94,7 +98,7 @@ span {
 
 button {
    font-size: 1rem;
-   padding: 10px 20px;
+   padding: 1rem 2rem;
    cursor: pointer;
    background-color: rgb(71, 50, 125);
    color: white;
