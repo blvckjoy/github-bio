@@ -1,9 +1,3 @@
-const userInfo = document.querySelector('.user-info');
-const searchBtn = document.querySelector('button');
-const avatar = document.querySelector('img');
-const followers = document.querySelector('.followers-count');
-const following = document.querySelector('.following-count');
-
 async function fetchGithubProfile() {
    try {
       const input = getInputValue();
@@ -11,6 +5,7 @@ async function fetchGithubProfile() {
       validateInput(input);
 
       const data = await fetchData(url);
+      const userInfo = document.querySelector('.user-info');
       updateProfile(data);
       userInfo.classList.toggle('hidden');
       userInfo.classList.add('fade-in');
@@ -48,6 +43,9 @@ async function fetchData(url) {
 
 // function to update profile
 function updateProfile(data) {
+   const avatar = document.querySelector('img');
+   const followers = document.querySelector('.followers-count');
+   const following = document.querySelector('.following-count');
    avatar.src = `${data.avatar_url}`;
    document.querySelector('.heading').textContent = `${data.name}`;
    document.querySelector('.description').textContent =
@@ -64,9 +62,28 @@ function updateProfile(data) {
       data.following >= 1000
          ? `${(data.following / 1000).toFixed(1)}k`
          : `${data.following} `;
+
+   document.querySelector('.company-name').textContent = data.company;
+   document.querySelector('.location-name').textContent = data.location;
+   document.querySelector('.blog-name').textContent = data.blog;
+
+   const moreInfoLocation = document.querySelector('.location');
+   const moreInfoCompany = document.querySelector('.company');
+   const moreInfoBlog = document.querySelector('.blog');
+
+   // hide element based on data
+   hideElementIfNull(moreInfoLocation, data.location);
+   hideElementIfNull(moreInfoCompany, data.company);
+   hideElementIfNull(moreInfoBlog, data.blog);
+}
+
+// function to hide element if data is null
+function hideElementIfNull(element, dataValue) {
+   if (dataValue === null || dataValue === '') element.style.display = 'none';
 }
 
 // event listener
+const searchBtn = document.querySelector('button');
 searchBtn.addEventListener('click', (e) => {
    e.preventDefault();
    fetchGithubProfile();
